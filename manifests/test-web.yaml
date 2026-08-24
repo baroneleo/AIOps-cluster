@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-web
+  name: test-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-web
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: test-web
+    spec:
+      containers:
+      - image: nginx:alpine
+        name: nginx
+        resources: {}
+status: {}
+
