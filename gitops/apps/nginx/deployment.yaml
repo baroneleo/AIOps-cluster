@@ -15,6 +15,10 @@ spec:
       labels:
         app: gitops-nginx
     spec:
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
       containers:
         - name: nginx
           image: nginx:1.27
